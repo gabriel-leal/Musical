@@ -1,0 +1,318 @@
+/* Mobile */
+@media screen {
+    * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    main {
+    background: url(/assets/images/fundo.png) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    overflow-x: hidden;
+    overflow-y: auto;
+    }
+
+    section#cadastro {
+        background-color: white;
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.468);
+        padding: 10px;
+        margin: 15px 0; /* Espaço superior/inferior adicional */
+        position: relative;
+    }
+
+    section#cadastro > div#imagem {
+        display: block;
+        background: url(/assets/images/logo-evento.png) no-repeat;
+        background-position: center center;
+        background-size: cover;
+        height: 270px;
+        width: 100%;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    section#cadastro > div#formulario {
+        display: block;
+        padding: 9px;
+    }
+
+    div#formulario > h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    p label, p input {
+        color: #193B62;
+    }
+
+    form {
+        font-size: 1.1em;
+    }
+
+    form > p {
+        padding-bottom: 5px;
+    }
+
+    input {
+        font-size: 1.1em;
+        border-radius: 8px;
+        width: 100%;
+        outline: 0;
+        padding: 0px 0px 0px 10px;
+    }
+
+    input:focus-within {
+        background-color: #D3E6F8;
+    }
+
+    div#membro {
+        padding-top: 10px;
+    }
+
+    div#membro > p > input {
+        margin-top: 10px;
+        display: inline-block;
+        width: 10%;
+    }
+
+    div#direitos > p > input {
+        margin-top: 30px;
+        display: inline-block;
+        width: 10%;
+    }
+
+    div#direitos p {
+        color: #193B62;
+    }
+
+    input#idireitos {
+        cursor: pointer;
+    }
+
+    div#direitos button {
+        font-size: 1em;
+        font-weight: bold;
+        background-color: white;
+        color: #CE9D2C;
+        border: 0px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+   .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    width: 90%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #00000080;
+    overflow-y: auto;
+    max-height: 90vh;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    p {
+        margin: 10px 0px;
+        color: black;
+    }
+
+    button {
+        background-color: #1F4263;
+        color: white;
+        font-size: 1.5em;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #1F4263;
+        }
+    }
+}
+
+.modal-content.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content p {
+    margin: 10px 0px;
+    color: black;
+}
+
+.modal-content button {
+    background-color: #1F4263;
+    color: white;
+    font-size: 1.5em;
+    width: auto;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+
+    /* Form inputs */
+    input::placeholder {
+        padding-left: 7px;
+    }
+
+    form > input[type=date] {
+        padding-left: 2px;
+    }
+
+    form > input[type=submit] {
+        display: block;
+        font-size: 1em;
+        width: 100%;
+        height: 40px;
+        margin-top: 10px;
+        background-color: #1F4263;
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s;
+        
+        &:disabled{
+            opacity: 0.3;
+        }
+
+        &:hover:disabled{
+            cursor: no-drop;
+        }
+
+        &:active:disabled {
+            transform: scale(1);
+        }
+
+
+    }
+
+    form > input[type=submit]:hover {
+        background-color: #1f426370;
+    }
+
+    form > input[type=submit]:active {
+        transform: scale(.9);
+    }
+
+    .spinner {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+form > button#btn-send {
+  display: block;
+  font-size: 1em;
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  background-color: #1F4263;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+  transition: all 0.2s;
+}
+
+    div#msg {
+        padding-top: 10px;
+        font-size: 1.1em;
+    }
+
+    .no-scroll {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+
+    .invalid {
+        border: 1px solid red;
+    }
+
+    .preloader.hidden {
+        display: none !important;
+    }
+}
+
+/* Tablet e desktops */
+@media screen and (min-width: 769px) {
+    section#cadastro {
+        width: 510px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    section#cadastro > div#imagem {
+        margin-top: 5px;
+        height: 300px;
+        width: 380px;
+        border-radius: 10px;
+    }
+
+    div#formulario > p {
+        font-size: 1em;
+        margin: 15px 0px;
+    }
+
+    div#direitos button {
+        font-size: 1.1em;
+    }
+
+    /* Modal para telas maiores */
+    .modal-backdrop {
+        padding: 20px;
+    }
+
+    .modal-content {
+        width: 60%;
+        max-width: 600px;
+    }
+}

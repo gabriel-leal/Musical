@@ -1,0 +1,2 @@
+banco = {'host': 'localhost', 'port': 3306, 'user': 'root', 'password': '12345', 'database': 'musical'}
+#banco = {'host': '172.17.0.2', 'port': 3306, 'user': 'root', 'password': '123', 'database': 'musical'}

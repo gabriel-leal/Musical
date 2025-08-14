@@ -1,0 +1,48 @@
+<!--====== PRELOADER PART START ======-->
+
+<div class="preloader">
+    <div class="loader">
+        <div class="ytp-spinner">
+            <div class="ytp-spinner-container">
+                <div class="ytp-spinner-rotator">
+                    <div class="ytp-spinner-left">
+                        <div class="ytp-spinner-circle"></div>
+                    </div>
+                    <div class="ytp-spinner-right">
+                        <div class="ytp-spinner-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section id="cadastro">
+        <div id="imagem">
+        </div>
+        <div id="formulario">
+            <h1>Adicione dependentes para <span id="pai">{{ pai }}</span></h1>
+            <form id="idform" autocomplete="on" [formGroup]="form">
+                <p><label for="inome">*Nome Completo: </label></p>
+                <p><input type="text" formControlName="nomeCompleto" name="nome" id="inome" required autocomplete="name" minlength="10" maxlength="40" placeholder="Ex: João Silva Pereira"></p>
+                <p><label for="idata">*Data De Nascimento: </label></p>
+                <p><input type="tel" formControlName="dataNas" name="datanasc" id="idata" mask="00/00/0000" autocomplete="bday" placeholder="Ex: 01/11/1965"></p>
+                <p><label for="iemail">Email: </label></p>
+                <p><input type="email" formControlName="email" name="email" id="iemail" autocomplete="email" placeholder="Ex: igrejacastelo@gmail.com"></p>
+                <p><label for="itel">Celular: </label></p>
+                <p><input type="tel" formControlName="celular" name="telefone" id="itel" mask="(00) 00000-0000" placeholder="Ex: (16) 99123-4567"></p>
+                <div id="membro">
+                    <p>*Ele é membro da igreja ou convidado?</p>
+                    <p><input type="radio" id="imem" formControlName="membro" value="1" required><label for="imem">Membro</label></p>
+                    <p><input type="radio" id="iconv" formControlName="membro" value="0"><label for="iconv">Convidado</label></p>
+                </div>
+                 <input *ngIf="!loading" id="btn-send" type="submit" value="Inscrever" (click)="submit()" [disabled]="form.invalid || loading"/>
+            <button *ngIf="loading" id="btn-send" type="button" disabled>
+            <span class="spinner"></span>
+            </button>
+            <button id="btn-back" type="button" (click)="goback()">Voltar</button>
+            </form>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,38 @@
+.aboutimg {
+    border-radius: 10px;
+}
+
+.header-content-area {
+    background-size: cover;
+    background-position: center;
+}
+
+
+.preloader.hidden {
+    display: none !important;
+}
+
+.menezes a {
+    transition: 250ms ease-in-out;
+    &:hover {
+        text-decoration: underline;
+        transform: scale(1.1);
+    }
+}
+
+.pt-200 {
+    padding-top: 0px;
+}
+
+@media screen and (min-width: 1000px) {
+    .pt-200 {
+        padding-top: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+  .header-content-area {
+    height: auto; /* ou: 70vh, para uma altura menor */
+    padding: 50px 0; /* dá espaço interno */
+  }
+}

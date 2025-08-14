@@ -1,0 +1,41 @@
+<!--====== PRELOADER PART START ======-->
+
+<div class="preloader">
+    <div class="loader">
+        <div class="ytp-spinner">
+            <div class="ytp-spinner-container">
+                <div class="ytp-spinner-rotator">
+                    <div class="ytp-spinner-left">
+                        <div class="ytp-spinner-circle"></div>
+                    </div>
+                    <div class="ytp-spinner-right">
+                        <div class="ytp-spinner-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="container">
+        <h1>Inscrição realizada com sucesso!!</h1>
+        <table id="ids"> 
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                </tr>
+            </thead>
+            <tbody id="tabela">
+                <tr *ngFor="let pessoa of pessoas; let i = index">
+                    <th>{{ pessoa.id }}</th>
+                    <th>{{ pessoa.nomecompleto }}</th>
+                  </tr>
+            </tbody>
+        </table>
+        <p><a (click)="goToDependentes()">Caso tenha dependentes clique aqui</a></p>
+        <!-- <p><a (click)="exit()">Para sair da inscrição, clique aqui.</a></p>
+        <p style="font-size: medium;">Para voltar, basta se recadastrar com o mesmo telefone e e-mail usados anteriormente.</p> -->
+    </div>
+</main>

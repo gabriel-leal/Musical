@@ -1,0 +1,140 @@
+.camera {
+  width: 45%;
+  margin-top: 10px;
+  transition: opacity 0.3s ease; 
+}
+
+[hidden] {
+  display: none !important; 
+}
+
+.btn-secondary {
+  background-color: white;
+  color: black;
+  border: none;
+
+  &:hover {
+    background-color: white;
+  }
+
+}
+
+ main {
+    background: url(/assets/images/fundo.png) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: monospace;
+    overflow: auto;
+    white-space: pre-wrap; 
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pesquisa {
+  margin-left: 10px;
+  width: 50%;
+  padding-left: 38px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e6b33d;
+  color: white;
+  border: 1px solid #9e7a25;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    background-color: #f3b117;
+  }
+}
+
+.tabela {
+  display: flex;
+  justify-content: center;
+
+  table {
+    width: 95%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      cursor: pointer;
+    }
+
+    th {
+      background-color: #4C6BB1;
+      color: #e6b33d;
+      text-transform: uppercase;
+    }
+  }
+
+  tfoot {
+    background-color: #4C6BB1;
+    color: #e6b33d;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .btn-primary {
+  background-color: lightblue;
+  border: 1px solid blue;
+
+  &:hover {
+      background-color: blue;
+  }
+}
+
+.modal {
+  z-index: 1051 !important;
+}
+
+.mdc-snackbar, .custom-snackbar {
+  z-index: 2000 !important;
+}
+
+.modal-title{
+  font-weight: bold;
+}
+
+.modal-content {
+  background-color: rgb(247, 247, 247);
+}
+}
+
+
+@media (max-width: 720px ) {
+  .camera {
+    width: 100%;
+  }
+
+  .pesquisa {
+    width: 95%;
+    padding-left: 0;
+  }
+}

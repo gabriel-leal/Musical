@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+    /* Mobile */
+@media screen  {
+
+   main {
+    background: url(/assets/images/fundo.png) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh; /* Usa a altura visível da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: env(safe-area-inset-top); /* Respeita o notch */
+    padding-bottom: env(safe-area-inset-bottom);
+    overflow-x: hidden;
+    }
+
+    section {
+        background-color: white;
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.468);
+        padding: 10px;
+        margin: 15px 0; /* Espaço superior/inferior adicional */
+        position: relative;
+    }
+
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #CE9D2C;
+    }
+
+    p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2em;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    a {
+        display: block;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.1em;
+        text-align: center;
+        padding-top: 10px;
+        color: #1F4263;
+        text-decoration: underline;
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.05);
+        color: #15314b;
+        text-decoration: none;
+    }
+
+    .preloader.hidden {
+        display: none !important;
+    }
+}
+
+/* Tablet e desktops */
+@media screen and (min-width: 769px) { 
+
+    section {
+        width: 520px;
+    }
+
+    p {
+        font-size: 1.4em;
+    }
+
+    a {
+        font-size: 1.3em;
+    }
+
+}

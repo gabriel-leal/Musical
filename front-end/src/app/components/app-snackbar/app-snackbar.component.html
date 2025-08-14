@@ -1,0 +1,7 @@
+<div fxLayout="row" class="snackbar" [ngClass]="snackType">
+  <div class="content">
+    <mat-icon class="icon">{{ getIcon }}</mat-icon>
+    <span class="message">{{ data.message }}</span>
+  </div>
+  <mat-icon class="close-icon" (click)="dismiss()">close</mat-icon>
+</div>

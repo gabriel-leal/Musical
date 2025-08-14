@@ -1,0 +1,42 @@
+:host {
+  z-index: 2000 !important;
+}
+
+.snackbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: white;
+  min-width: 250px;
+}
+
+.success {
+  background-color: #4caf50; /* Verde */
+}
+
+.error {
+  background-color: #f44336; /* Vermelho */
+}
+
+.warning {
+  background-color: #ff9800; /* Laranja */
+}
+
+.info {
+  background-color: #2196f3; /* Azul */
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.close-icon {
+  cursor: pointer;
+}

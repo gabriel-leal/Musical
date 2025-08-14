@@ -1,0 +1,64 @@
+<main>
+
+    <div class="button-container">
+        <ngx-scanner-qrcode #action="scanner" class="camera"  (event)="scanSuccess($event)" [config]="config" [hidden]="!action?.isStart"/>
+    </div>
+    
+    
+    <p *ngIf="action.isLoading"> Carregando...</p>
+    
+    
+    <div class="button-container">
+        <button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Parar' : 'Ler QrCode'}}</button>
+    </div>
+    
+    <div class="button-container pesquisa">
+        <input type="text" [(ngModel)]="filtro" placeholder="Pesquisar..." class="form-control mb-3" (change)="activaRecepcao(filtro)" />
+    </div>
+    
+    <div class="tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+             <tbody>
+                <tr *ngFor="let pessoa of pessoas | filtroPessoas:filtro" [ngStyle]="{'background-color': pessoa.presenca === 1 ? '#D3E6F8' : 'white', 'color': pessoa.presenca === 1 ? 'black' : 'black'}" id="{{ pessoa.id}}">
+                    <td (click)="alteraPresenca(pessoa)"  [ngStyle]="{ 'padding-left': pessoa.idpai ? '90px' : '5px' }">{{ pessoa.nomecompleto }}</td>
+                </tr>
+             </tbody>
+            <tfoot>
+            <tr>
+                <td class="flex-container">
+                <span>Total: {{ total }}</span>
+                <span>Presentes: {{ presentes }}</span>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    
+    
+    
+    <!-- Modal -->
+        <div class="modal fade" id="verticalycentered" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title">Cancelar Presença?</h5>
+                <button type="button" class="btn-close btn-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="font-size: 1.3em;">
+                Deseja realmente cancelar a Presença de <strong>{{ pessoaSelecionada?.nomecompleto}}</strong>?
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary" style="background-color: red; border: none;" data-bs-dismiss="modal" (click)="cancelaPresenca()">
+                    Sim, Cancelar Presença
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+</main>
